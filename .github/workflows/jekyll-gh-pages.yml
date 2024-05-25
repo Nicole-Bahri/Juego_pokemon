@@ -30,15 +30,15 @@ jobs:
       #   run: npm install -g pnpm
 
       - name: Install dependencies
-        run: npm install
+        run: pnpm install
 
       - name: Build project
-        run: npm run build
+        run: pnpm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist  # Asegúrate de que esta sea la carpeta de salida de tu build
+          path: ./dist  # Asegúrate de que esta sea la carpeta de salida de tu build
 
   deploy:
     environment:
