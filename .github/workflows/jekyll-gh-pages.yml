@@ -26,19 +26,19 @@ jobs:
         with:
           node-version: '18'  # Puedes especificar la versión de Node.js que necesitas
 
-      - name: Install pnpm
-        run: npm install -g pnpm
+      # - name: Install pnpm
+      #   run: npm install -g pnpm
 
       - name: Install dependencies
-        run: pnpm install
+        run: npm install
 
       - name: Build project
-        run: pnpm run build
+        run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: /dist  # Asegúrate de que esta sea la carpeta de salida de tu build
+          path: dist  # Asegúrate de que esta sea la carpeta de salida de tu build
 
   deploy:
     environment:
